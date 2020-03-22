@@ -117,9 +117,22 @@ var addToTree = function() {
     alert("Wrong input");
 };
 
+var clearTree =  function() {
+  var c = document.getElementById('my-canvas');
+  var ctx = c.getContext('2d');
+
+  ctx.clearRect(0, 0, c.width, c.height);
+
+  btree = new BTree();
+}
+
+var resetTree = function() {
+  let values = [43, 41,60,48,75,99,80,67];
+  for(let i = 0; i < values.length; i++) {
+    btree.add(values[i]);
+  }
+}
+
 var btree = new BTree();
 
-let values = [43, 41,60,48,75,99,80,67];
-for(let i = 0; i < values.length; i++) {
-  btree.add(values[i]);
-}
+resetTree();
